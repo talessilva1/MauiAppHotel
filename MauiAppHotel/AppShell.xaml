@@ -4,11 +4,13 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiAppHotel"
+    xmlns:Views="clr-namespace:MauiAppHotel.Views"
+    Shell.NavBarIsVisible="False"
     Title="MauiAppHotel">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate Views:ContratacaoHospedagem}"
         Route="MainPage" />
 
 </Shell>

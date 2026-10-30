@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre">
+    
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0, 0, 0, 5" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="Shadow" Value="2 2 2 Black 0.3" />
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="StrokeShape" Value="RoundRectangle 3" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="1" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="15"
+                         VerticalOptions="Center">
+        <Label Text="Sobre o App Hotel"
+            FontFamily="BowlbyOneRegular"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="24"
+            Margin="0, 0, 0, 0" />
+
+        <Border Margin="0, 0, 0, 10" />
+
+        <Border Padding="10"
+                Margin="0, 0, 0,10">
+            <VerticalStackLayout>
+                <Label Text="Nome do desenvolvedor: Tales Arthur" />
+                <Label Text="Ano de desenvolvimento: 2026" />
+                <Label Text="Linguagem utilizada: C#" />
+                <Label Text="Framework utilizado: .NET MAUI" />
+                <Label Text="IDE utilizado: Visual Studio" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Button Text="Ir ao repositório do app no Github"
+                Clicked="Repo_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

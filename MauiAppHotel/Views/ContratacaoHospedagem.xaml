@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="Shadow" Value="2 2 2 Black 0.3" />
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="StrokeShape" Value="RoundRectangle 20" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="1.5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="10"
+                         VerticalOptions="Center">
+        <Label 
+            Text="App Hotel"
+            FontFamily="BowlbyOneRegular"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="48" />
+
+        <!-- Área de cálculo -->
+        <Border>
+            <VerticalStackLayout Padding="15">
+                <!-- Quantidade de pessoas -->
+                <Label Text="Quantas pessoas?"
+                       Margin="0, 0, 0, 5" />
+                <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="Auto, Auto">
+                    
+                    <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
+                    <Label Grid.Row="0" Grid.Column="1" 
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+                    <Stepper x:Name="stp_adultos" Grid.Row="0" Grid.Column="2"
+                             Minimum="1" Maximum="5" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
+                    <Label Grid.Row="1" Grid.Column="1"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+                    <Stepper x:Name="stp_criancas" Grid.Row="1" Grid.Column="2"
+                             Minimum="0" Maximum="5"/>
+                </Grid>
+                <Border StrokeThickness="0.4" Margin="0,10,0,0" />
+
+                <!-- Acomodação -->
+                <Label Text="Selecione sua acomodação"
+                       Margin="0, 20, 0, 5" />
+                <Picker/>
+                <Border StrokeThickness="0.4" Margin="0,10,0,0" />
+
+                <!-- Datas -->
+                <Label Text="Selecione as datas a seguir"
+                       Margin="0, 20, 0, 5" />
+                <Border Margin="0, 0, 0, 20">
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="*, *"
+                          Padding="15" RowSpacing="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Text="Data Check-in:" />
+                        <DatePicker Grid.Row="0" Grid.Column="1" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Data Check-out:" />
+                        <DatePicker Grid.Row="1" Grid.Column="1" />
+                    </Grid>
+                </Border>
+
+
+                <Button Text="Calcular!" />
+
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Botão Sobre -->
+        <VerticalStackLayout Padding="10">
+            <Button Text="Sobre"
+                    Margin="20,0,20,0"
+                    Clicked="Sobre_Clicked"/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

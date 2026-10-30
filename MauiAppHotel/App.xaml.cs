@@ -11,7 +11,10 @@ namespace MauiAppHotel
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var w = new Window(new AppShell());
+            w.Height = 700;
+            w.Width = 350;
+            return w;
         }
     }
 }
