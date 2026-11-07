@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
-             Title="ContratacaoHospedagem">
+             Title="ContratacaoHospedagem"
+             BackgroundColor="{StaticResource Gray100}">
 
     <ContentPage.Resources>
         <Style TargetType="Label">
@@ -20,8 +21,9 @@
         </Style>
     </ContentPage.Resources>
 
-    <VerticalStackLayout Padding="10"
-                         VerticalOptions="Center">
+    <VerticalStackLayout Padding="15"
+                         VerticalOptions="Center"
+                         BackgroundColor="{StaticResource Background}">
         <Label 
             Text="App Hotel"
             FontFamily="BowlbyOneRegular"
@@ -57,7 +59,8 @@
                 <!-- Acomodação -->
                 <Label Text="Selecione sua acomodação"
                        Margin="0, 20, 0, 5" />
-                <Picker/>
+                <Picker x:Name="pck_quarto"
+                        ItemDisplayBinding="{Binding Nome}"/>
                 <Border StrokeThickness="0.4" Margin="0,10,0,0" />
 
                 <!-- Datas -->
@@ -69,15 +72,15 @@
                           Padding="15" RowSpacing="10">
                         
                         <Label Grid.Row="0" Grid.Column="0" Text="Data Check-in:" />
-                        <DatePicker Grid.Row="0" Grid.Column="1" />
+                        <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected" Grid.Row="0" Grid.Column="1" />
 
                         <Label Grid.Row="1" Grid.Column="0" Text="Data Check-out:" />
-                        <DatePicker Grid.Row="1" Grid.Column="1" />
+                        <DatePicker x:Name="dtpck_checkout" Grid.Row="1" Grid.Column="1" />
                     </Grid>
                 </Border>
 
 
-                <Button Text="Calcular!" />
+                <Button Text="Calcular!" Clicked="Calcular_Clicked" />
 
             </VerticalStackLayout>
         </Border>

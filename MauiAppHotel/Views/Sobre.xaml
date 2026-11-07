@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.Sobre"
-             Title="Sobre">
+             Title="Sobre"
+             BackgroundColor="{StaticResource Gray100}">
     
     <ContentPage.Resources>
         <Style TargetType="Label">
@@ -22,7 +23,8 @@
     </ContentPage.Resources>
 
     <VerticalStackLayout Padding="15"
-                         VerticalOptions="Center">
+                         VerticalOptions="Center"
+                         BackgroundColor="{StaticResource Background}">
         <Label Text="Sobre o App Hotel"
             FontFamily="BowlbyOneRegular"
             VerticalOptions="Center" 
@@ -35,7 +37,7 @@
         <Border Padding="10"
                 Margin="0, 0, 0,10">
             <VerticalStackLayout>
-                <Label Text="Nome do desenvolvedor: Tales Arthur" />
+                <Label Text="Desenvolvedor: Tales Arthur" />
                 <Label Text="Ano de desenvolvimento: 2026" />
                 <Label Text="Linguagem utilizada: C#" />
                 <Label Text="Framework utilizado: .NET MAUI" />
